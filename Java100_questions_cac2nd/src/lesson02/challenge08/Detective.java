@@ -47,7 +47,9 @@
 
 package lesson02.challenge08;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class Detective {
 
@@ -63,12 +65,34 @@ public class Detective {
 		System.out.println("探偵：");
 		System.out.println("目撃証言はないし、犬の鳴き声も聞こえなったらしい");
 		System.out.println("ということは逃走経路は...\n");
+
 		System.out.println("1．パターンＡ");
 		System.out.println("2．パターンＢ");
 		System.out.println("3．パターンＣ");
 		System.out.print("数字を選んでここに入力＞");
 
-		//ここに入力処理を入れる
+		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+		String input = reader.readLine(); // 文字をパソコンに保存する
+		int patan = Integer.parseInt(input); // 文字をint整数に
+
+		switch (patan) {
+		case 1:
+			System.out.println("探偵：");
+			System.out.println("やっぱりその経路が一番可能性が高いね");
+			break;
+		case 2:
+			System.out.println("探偵：");
+			System.out.println("その可能性は低いかな。");
+			break;
+		case 3:
+			System.out.println("探偵：");
+			System.out.println("犬がよく知っている人物ならあり得るね。");
+			break;
+		default:
+			System.out.println("探偵：");
+			System.out.println("他に道はありませんよ。");
+			break;
+		}
 
 		//ここにswitch文を入れる
 

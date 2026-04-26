@@ -1,4 +1,4 @@
-/**
+1/**
  * 第2章 名探偵のお仕事
  *
  * 問題4  車のガソリンは足りているか？
@@ -23,18 +23,20 @@ public class Detective {
 
 	public static void main(String[] args) {
 
-		//ここに変数を記述する。
+		int gasolin = 11;
 
 
 		System.out.println("探偵：");
 		System.out.println("では早速出かけよう\n");
 		System.out.println("助手：");
 		System.out.println("ちょっと待ってください！ガソリンが...\n");
+ 				
+		if (gasolin > 10 ) {
+			System.out.println("助手：");
+			System.out.println("ちょっと待ってください！ガソリンが...");
+			System.out.println("あ、やっぱり足りてました");
+		}
 
-		//ここにif文を記述する。
-		//変数gasolinが10以上であるときにガソリンが足りているものとします。
-
+		}
 
 	}
-
-}
