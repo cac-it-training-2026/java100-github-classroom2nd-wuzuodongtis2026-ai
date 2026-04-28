@@ -83,10 +83,57 @@ public class Explorer {
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
+		// ここにwhile文、if文を利用した処理を記述
+		while (i < 3) {
+			System.out.println("隊長：");
+			System.out.println("どの手を出して通り抜けますか");
+			System.out.print("（グー… 1 : チョキ… 2 : パー… 3）＞");
 
-		//ここにwhile文、if文を利用した処理を記述
+			// ユーザーの輸入を整数にする
+			String inputStr = br.readLine();
+			hand = Integer.parseInt(inputStr);
 
+			//ユーザーの輸入は範囲内であるかを研修する
+			if (hand < 1 || hand > 3) {
+				System.out.println("\n隊長：");
+				System.out.println("そんな手はありませんよ。もう一度入れてください。\n");
+				continue; // 改めて輸入をします・
+			}
 
+			// ワニの種類をランダムに生成する(1: グー, 2: チョキ, 3: パー)
+			alligator = (int) (Math.random() * 3) + 1;
+
+			//数字をワニの名前を
+			String alligatorName = "";
+			if (alligator == 1) {
+				alligatorName = "グー";
+			} else if (alligator == 2) {
+				alligatorName = "チョキ";
+			} else if (alligator == 3) {
+				alligatorName = "パー";
+			}
+
+			System.out.println("\n隊長：");
+			System.out.println("相手は" + alligatorName + "ワニでした。");
+
+			// 勝負を判定すり (1: グー, 2: チョキ, 3: パー)
+			// 以下三つのバージョンは失敗と見なされる：
+
+			if ((hand == 1 && alligator == 3) ||
+					(hand == 2 && alligator == 1) ||
+					(hand == 3 && alligator == 2)) {
+
+				// 失敗したら break から while の循環から脱出を
+				break;
+
+			} else {
+				// 勝ちまたは同じだったら通過する
+				System.out.println((i + 1) + "匹目通り抜け成功！\n");
+				i++; // 成功通過数＋１
+			}
+		}
+
+		// 最後の結果判定
 		if (i == 3) {
 			System.out.println("隊長：");
 			System.out.println("川を渡り切りました。");

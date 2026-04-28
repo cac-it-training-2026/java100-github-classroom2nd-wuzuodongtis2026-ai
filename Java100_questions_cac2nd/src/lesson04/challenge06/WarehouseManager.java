@@ -30,7 +30,6 @@
  *  です。
  *
  */
-
 package lesson04.challenge06;
 
 public class WarehouseManager {
@@ -39,9 +38,22 @@ public class WarehouseManager {
 
 		int[] ABKosanArray = new int[5];
 
-
-		//ここに重複チェックおよび値の代入処理を記述する
-
+		for (int i = 0; i < 5; i++) {
+			while (true) {
+				int r = (int) (Math.random() * 5) + 1;
+				boolean isDuplicate = false;
+				for (int j = 0; j < i; j++) {
+					if (ABKosanArray[j] == r) {
+						isDuplicate = true;
+						break;
+					}
+				}
+				if (!isDuplicate) {
+					ABKosanArray[i] = r;
+					break;
+				}
+			}
+		}
 
 		System.out.println("E主任：");
 		System.out.println("AB興産の荷物の入れ替えをお願いします。\n");
@@ -57,9 +69,27 @@ public class WarehouseManager {
 		}
 		System.out.println("\nです。\n");
 
+		// --- ここに値の入れ替え処理を記述する ---
+		int idx1 = -1, idx2 = -1, idx3 = -1, idx4 = -1;
 
-		//ここに値の入れ替え処理を記述する
+		for (int i = 0; i < ABKosanArray.length; i++) {
+			if (ABKosanArray[i] == 1)
+				idx1 = i;
+			if (ABKosanArray[i] == 2)
+				idx2 = i;
+			if (ABKosanArray[i] == 3)
+				idx3 = i;
+			if (ABKosanArray[i] == 4)
+				idx4 = i;
+		}
 
+		int temp13 = ABKosanArray[idx1];
+		ABKosanArray[idx1] = ABKosanArray[idx3];
+		ABKosanArray[idx3] = temp13;
+
+		int temp24 = ABKosanArray[idx2];
+		ABKosanArray[idx2] = ABKosanArray[idx4];
+		ABKosanArray[idx4] = temp24;
 
 		System.out.println("入れ替え後の状態は、");
 		for (int i = 0; i < ABKosanArray.length; i++) {
@@ -69,6 +99,5 @@ public class WarehouseManager {
 			}
 		}
 		System.out.println("\nです。");
-
 	}
 }

@@ -95,21 +95,19 @@ public class WarehouseManager {
 
 		System.out.print("データ型を選んでください（1...文字、2...文字列、3...数値）＞");
 
-
-		//ここに入力処理を記述する。
-
+		String typeInput = br.readLine();
+		int dataType = Integer.parseInt(typeInput);
 
 		System.out.print("\n要素数を選んでください（1...1個、2...2個、3...3個）＞");
 
-
-		//ここに入力処理を記述する。
-
+		String countInput = br.readLine();
+		int elementCount = Integer.parseInt(countInput);
 
 		boolean errFlag = false;
 
-
-		//ここに入力値の範囲チェック処理を記述する。
-
+		if (dataType < 1 || dataType > 3 || elementCount < 1 || elementCount > 3) {
+			errFlag = true;
+		}
 
 		if (!errFlag) {
 			System.out.println("\nZ先輩：");
@@ -126,10 +124,25 @@ public class WarehouseManager {
 			String[] strArray = null;
 			int[] intArray = null;
 
+			if (dataType == 1) {
 
-			//ここに入力値による分岐および配列要素数の確定、
-			//値の代入処理を記述する。
+				charArray = new char[elementCount];
+				for (int i = 0; i < elementCount; i++) {
+					charArray[i] = 'A';
+				}
+			} else if (dataType == 2) {
 
+				strArray = new String[elementCount];
+				for (int i = 0; i < elementCount; i++) {
+					strArray[i] = "おまかせ商品";
+				}
+			} else if (dataType == 3) {
+
+				intArray = new int[elementCount];
+				for (int i = 0; i < elementCount; i++) {
+					intArray[i] = 100;
+				}
+			}
 
 			System.out.println("Yさん：");
 			System.out.println("...出来ました。\n");
@@ -139,9 +152,13 @@ public class WarehouseManager {
 
 			System.out.println("Yさん：");
 
-
-			//ここに入力値による分岐および配列要素の表示処理を記述する。
-
+			if (dataType == 1) {
+				System.out.print(charArray[elementCount - 1]);
+			} else if (dataType == 2) {
+				System.out.print(strArray[elementCount - 1]);
+			} else if (dataType == 3) {
+				System.out.print(intArray[elementCount - 1]);
+			}
 
 			System.out.println("です。\n");
 
