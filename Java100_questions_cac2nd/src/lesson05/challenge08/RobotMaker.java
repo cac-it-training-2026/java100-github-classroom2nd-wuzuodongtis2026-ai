@@ -65,7 +65,7 @@ import java.io.InputStreamReader;
 
 public class RobotMaker {
 
-    public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException {
 
         System.out.println("Rさん：");
         System.out.println("もうちょっと高度な調理機能が欲しいですね。\n");
@@ -104,6 +104,9 @@ public class RobotMaker {
         String butterNumStr = br.readLine();
         int butterNum = Integer.parseInt(butterNumStr);
 
+        
+		Robot robot1 = new Robot();
+		robot1.makeEggDishes(int flourNum, int sugarNum, int eggNum, int butterNum);
         //ここでRobotクラスのインスタンスを作り、
         //（インスタンス名はrobot）
         //makeEggDishesを実行する。

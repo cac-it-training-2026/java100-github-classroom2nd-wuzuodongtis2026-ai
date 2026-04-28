@@ -33,26 +33,28 @@ package lesson05.challenge07;
 
 public class RobotMaker {
 
-    public static void main(String[] args) {
+	public static void main(String[] args) {
 
-        System.out.println("Rさん：");
-        System.out.println("でもこれランダムに水を入れた時にロボット内の水量がわかりませんね。\n");
-        System.out.println("G博士：");
-        System.out.println("そう言えばそうじゃな。よし、ちょっと待っとれ。\n");
-        System.out.println("G博士：");
-        System.out.println("......出来た！現在の水量を表示する機能じゃ。\n");
+		System.out.println("Rさん：");
+		System.out.println("でもこれランダムに水を入れた時にロボット内の水量がわかりませんね。\n");
+		System.out.println("G博士：");
+		System.out.println("そう言えばそうじゃな。よし、ちょっと待っとれ。\n");
+		System.out.println("G博士：");
+		System.out.println("......出来た！現在の水量を表示する機能じゃ。\n");
 
-        int water = 0;
+		Robot robot1 = new Robot();
+		robot1.randomWater();
+		int water = robot1.getWater();
 
-        //ここでRobotクラスのインスタンスを作り、
-        //（インスタンス名はrobot）
-        //randomWaterを実行する。
-        //getWaterを実行する。
+		//ここでRobotクラスのインスタンスを作り、
+		//（インスタンス名はrobot）
+		//randomWaterを実行する。
+		//getWaterを実行する。
 
-        System.out.println("「ガ～ピィーガ～、ゲンザイノスイリョウハ" + water + "リットルデス。」\n");
+		System.out.println("「ガ～ピィーガ～、ゲンザイノスイリョウハ" + water + "リットルデス。」\n");
 
-        System.out.println("Rさん：");
-        System.out.println("なんか雑音が気になりますが、一応出来てますね。\n");
-    }
+		System.out.println("Rさん：");
+		System.out.println("なんか雑音が気になりますが、一応出来てますね。\n");
+	}
 
 }
